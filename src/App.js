@@ -1,3 +1,4 @@
+
 import './App.css';
 import React, { useState } from 'react';
 import Search from './components/search/search';
@@ -16,25 +17,24 @@ function App() {
     const forecastFetch = fetch(`${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`);
 
     Promise.all([currentWeatherFetch, forecastFetch])
-    .then(async (response) => {
-      const weatherResponse = await response[0].json();
-      const forecastResponse = await response[1].json();
+      .then(async (response) => {
+        const weatherResponse = await response[0].json();
+        const forecastResponse = await response[1].json();
 
-      setCurrentWeather({ city: searchData.label , ...weatherResponse});
-      setForecast({ city: searchData.label, ...forecastResponse});
-    })
-    .catch((error) => console.log(error));
-
-  }
+        setCurrentWeather({ city: searchData.label, ...weatherResponse });
+        setForecast({ city: searchData.label, ...forecastResponse });
+      })
+      .catch((error) => console.log(error));
+  };
 
   console.log(currentWeather);
   console.log(forecast);
 
   return (
     <div className="container">
-        <Search onSearchChange={handleOnSearchChange} />
-        {currentWeather && <CurrentWeather data={currentWeather} />}
-        <Forecast />
+      <Search onSearchChange={handleOnSearchChange} />
+      {currentWeather && <CurrentWeather data={currentWeather} />}
+      {forecast && <Forecast data={forecast} />} {/* Pass forecast data to Forecast component */}
     </div>
   );
 }

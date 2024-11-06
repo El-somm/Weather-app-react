@@ -1,70 +1,77 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Getting Started
 
-## Available Scripts
+To get started with this app, follow these steps:
 
-In the project directory, you can run:
+	1.	Clone the Repository
+git clone https://github.com/El-somm/weather-app-react.git
+cd weather-app-react
 
-### `npm start`
+	2.	Install Dependencies
+Run the following command to install the necessary dependencies:
+npm install
+npm i react-select-async-paginate
+npm i eact-accessible-accordion
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+	3.	Set Up API Keys
+You will need two API keys for this project: one from GeoDB (for location search) and another from OpenWeatherMap (for weather data). Follow the steps below to obtain these keys:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+	•	GeoDB API (Location Search)
+	1.	Go to GeoDB API on RapidAPI.
+	2.	Sign up or log in to RapidAPI.
+	3.	Subscribe to the API and obtain your API key.
+	4.	Store the API key in a api.js file in the src of your project: GEO_API_KEY=your-geo-db-api-key
+	•	OpenWeather API (Weather Data)
+	1.	Go to OpenWeatherMap and sign up or log in.
+	2.	Obtain your free API key.
+	3.	Store the OpenWeather API key in your api.js file:
+        WEATHER_API_KEY=your-openweather-api-key
+	4.	Run the Application
+Once the dependencies are installed and API keys are configured, run the application with:
+npm start
+This will start the app in development mode, and you can view it in your browser at http://localhost:3000.
 
-### `npm test`
+Available Scripts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In the project directory, you can run the following commands:
 
-### `npm run build`
+npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Runs the app in development mode.
+Open http://localhost:3000 to view it in your browser.
+The page will reload if you make changes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm run build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Builds the app for production to the build folder.
+The app is optimized for the best performance and is ready to be deployed.
 
-### `npm run eject`
+npm run eject
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+	Warning: This is a one-way operation. Once you eject, you can’t go back!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you’re not satisfied with the default configuration, you can eject to get full control over the build setup. However, this is typically not needed for smaller projects and can make future updates more difficult.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+External Libraries
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project uses the following libraries and tools:
 
-## Learn More
+	•	React: JavaScript library for building user interfaces.
+	•	React-Accessible-Accordion: A library for creating accessible accordion UI components.
+	•	Dotenv: Used to manage environment variables.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Code Organization
 
-### Code Splitting
+The app is organized as follows:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+	•	src/: Contains the source code for the app.
+	•	components/: Contains React components for displaying different sections of the app.
+	•	CurrentWeather.js: Displays the current weather data for a city.
+	•	Forecast.js: Displays the 7-day weather forecast.
+	•	Search.js: Allows users to input a city and fetch weather data.
+	•	api.js: Contains functions to make requests to the APIs for weather and city data.
+	•	App.js: The main component where the app is initialized and the state is managed.
+	•	App.css: Styles for the application.
+	•	public/: Contains static assets like images and icons.
+	•	.env: Stores environment variables, such as API keys.

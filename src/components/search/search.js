@@ -21,6 +21,10 @@ const Search = ({ onSearchChange }) => {
             };
           }),
         };
+      })
+      .catch((error) => {
+        console.error("Error fetching city data:", error);
+        return { options: [] };
       });
   };
 

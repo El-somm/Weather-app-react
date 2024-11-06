@@ -1,7 +1,5 @@
+import React from "react";
 import "./current-weather.css";
-<a href="https://www.flaticon.com/free-icons/weather" title="weather icons">
-  Weather icons created by Freepik - Flaticon
-</a>;
 
 const CurrentWeather = ({ data }) => {
   return (
@@ -11,17 +9,23 @@ const CurrentWeather = ({ data }) => {
           <p className="city">{data.city}</p>
           <p className="weather-description">{data.weather[0].description}</p>
         </div>
-        <img alt="weather" className="weather-icon" src={`icons/${data.weather[0].icon}.png`} />
+        <img
+          alt="weather"
+          className="weather-icon"
+          src={`icons/${data.weather[0].icon}.png`}
+        />
       </div>
       <div className="bottom">
-        <p className="temperature">{Math.round(data.main.temp)}</p>
+        <p className="temperature">{Math.round(data.main.temp)}°C</p>
         <div className="details">
           <div className="parameter-row">
-            <span className="parameter-label top">Details:</span>
+            <span className="parameter-label">Details</span>
           </div>
           <div className="parameter-row">
-            <span className="parameter-label">Feels Like</span>
-            <span className="parameter-value">{Math.round(data.main.feels_like)}</span>
+            <span className="parameter-label">Feels like</span>
+            <span className="parameter-value">
+              {Math.round(data.main.feels_like)}°C
+            </span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Wind</span>
@@ -29,7 +33,7 @@ const CurrentWeather = ({ data }) => {
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Humidity</span>
-            <span className="parameter-value">{data.main.humidity} %</span>
+            <span className="parameter-value">{data.main.humidity}%</span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Pressure</span>
